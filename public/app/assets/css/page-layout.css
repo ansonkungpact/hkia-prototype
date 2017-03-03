@@ -17620,6 +17620,8 @@ header .alert:hover {
 }
 
 .primary-nav {
+    padding-top: 10px;
+    padding-bottom: 10px;
     -webkit-box-ordinal-group: 1;
     -moz-box-ordinal-group: 1;
     -ms-flex-order: 1;
@@ -17655,13 +17657,13 @@ header .alert:hover {
 }
 
 .navbar-brand {
-    margin-top: 16px;
+    margin-top: 0;
     padding: 0
 }
 
 .navbar-brand img {
     width: auto;
-    height: 51px
+    height: 83px;
 }
 
 .mobile-menu-overlay {
