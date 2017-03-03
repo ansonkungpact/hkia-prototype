@@ -2435,3 +2435,38 @@ label {
 .site-min-height {
     min-height: 900px;
 }
+
+.dynamic-content2 {
+    margin-bottom: 15px;
+}
+.dynamic-content2 .flight-paris h3{
+    background: rgb(69,100,140);
+    color: white;
+        padding-left: 10px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    font-size: 12px;
+}
+.flight-cx278   ol {
+    padding-left: 0;
+    list-style: none;
+}
+
+.flight-cx278   ol  .vk_sh ._S0q{
+    display: inline;
+    padding: 5px 10px;
+    background: rgb(69,100,140);
+    color: white;
+}
+.vk_ans.vk_bk {
+    font-size: 40px;
+}
+.flight-paris, .flight-cx278, .money-exchange {
+    display: none;
+}
+.flight-paris table {
+    width: 100%;
+}
+.dynamic-content2 h2 {
+    margin-bottom: 10px;
+}

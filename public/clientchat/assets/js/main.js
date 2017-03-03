@@ -298,7 +298,9 @@ function makeChatBubble (chat_message, chat_message_timestamp, chat_window, user
 	 	var locationArray;
 	 	var content = '';
 	 	var showDoc = false;
+	 	var showParis = false;
 	 	var showHealth = false;
+	 	var showMoney = false;
 
 	 	var veraGuessOd = false;
 
@@ -348,6 +350,12 @@ function makeChatBubble (chat_message, chat_message_timestamp, chat_window, user
 			}else if(entry == 'showDoc'){
 				console.log('comes here.............mikita:::: '+chat_message[entry]);
 				showDoc = true;
+			}else if(entry == 'showParis'){
+				console.log('comes here.............mikita:::: '+chat_message[entry]);
+				showParis = true;
+			}else if(entry == 'showMoney'){
+				console.log('comes here.............mikita:::: '+chat_message[entry]);
+				showMoney = true;
 			}else if(entry == 'showHealth'){
 				console.log('comes here.............mikita:::: '+chat_message[entry]);
 				showHealth = true;
@@ -355,62 +363,17 @@ function makeChatBubble (chat_message, chat_message_timestamp, chat_window, user
 		}
 		
 		if(showDoc){
-			var bubble_content = '<h2>Doctor list</h2><li ' + chat_bubble_id + 'class="chat-bubble key-response ' + user + ' ' + custom_class + '" style="display: none;"> <span class="sr-only">' + sr_users[user] + ': </span>' + 
-
-				'<style>'+
-				'table {'+
-				'border-collapse: collapse;'+
-				'width: 100%;'+
-				'}'+
-
-				'td, th {'+
-				'border: 1px solid #dddddd;'+
-				'text-align: left;'+
-				'padding: 8px;'+
-				'}'+
-
-				'tr:nth-child(even) {'+
-				'background-color: #dddddd;'+
-				'}'+
-				'</style>'+
-
-				'<table>'+
-				'<tr>'+
-				"<th>Doctor's Name</th>"+
-				'<th>Speciality</th>'+
-				'<th>Address</th>'+
-				'</tr>'+
-				'<tr>'+
-				'<td>Dr. Leung Yin Ching</td>'+
-				'<td>Endocrinology, Diabetes and Metabolism</td>'+
-				'<td>Room 618-619, 6/F, Block A, Hoi Luen Industrial Centre, 55 Hoi Yuen Rd, Kwun Tong (MTR Kwun Tong Station Exit B3)</td>'+
-				'</tr>'+
-				'<tr>'+
-				'<td>Dr. Lo Chi Kit Michael</td>'+
-				'<td>Endocrinology, Diabetes and Metabolism</td>'+
-				'<td>Room 618-619, 6/F, Block A, Hoi Luen Industrial Centre, 55 Hoi Yuen Rd, Kwun Tong (MTR Kwun Tong Station Exit B3)</td>'+
-				'</tr>'+
-				'<tr>'+
-				'<td>Dr. Siu Kai Leung Simon</td>'+
-				'<td>Endocrinology, Diabetes and Metabolism</td>'+
-				'<td>Room 618-619, 6/F, Block A, Hoi Luen Industrial Centre, 55 Hoi Yuen Rd, Kwun Tong (MTR Kwun Tong Station Exit B3)</td>'+
-				'</tr>'+
-				'<tr>'+
-				'<td>Dr. Yau Wing Him</td>'+
-				'<td>Endocrinology, Diabetes and Metabolism</td>'+
-				'<td>Shop No. 149, Hip Wo Street, Kwun Tong, Kowloon</td>'+
-				'</tr>'+
-				'<tr>'+
-				'<td>Dr. Ho Yiu Keung Steven</td>'+
-				'<td>Endocrinology, Diabetes and Metabolism</td>'+
-				'<td>Shop No. 149, Hip Wo Street, Kwun Tong, Kowloon</td>'+
-				'</tr>'+
-				'<tr>'+
-				'<td>Dr. Yu Chung Kwan Cellina</td>'+
-				'<td>Endocrinology, Diabetes and Metabolism</td>'+
-				'<td>Shop No. 149, Hip Wo Street, Kwun Tong, Kowloon</td>'+
-				'</tr>'+
-				'</table>';
+			$('.flight-paris').hide();
+			$('.money-exchange').hide();
+			$('.flight-cx278').fadeIn();
+		}else if(showParis){
+			$('.flight-cx278').hide();
+			$('.money-exchange').hide();
+			$('.flight-paris').fadeIn();
+		}else if(showMoney){
+			$('.flight-cx278').hide();
+			$('.flight-paris').hide();
+			$('.money-exchange').fadeIn();
 		}else if(showHealth){
 			var bubble_content = "<img src='assets/img/health.jpg' />";
 
@@ -422,10 +385,10 @@ function makeChatBubble (chat_message, chat_message_timestamp, chat_window, user
 			$('.vera-message-audio')[0].play();
 		}
 	 }
-if(showDoc || showHealth) {
-	$('.dynamic-content').html(bubble_content).find('.chat-bubble').fadeIn('slow');
+if(showDoc || showHealth || showParis) {
+	// $('.dynamic-content').html(bubble_content).find('.chat-bubble').fadeIn('slow');
 
-	$('.dynamic-content').addClass('show-content');
+	// $('.dynamic-content').addClass('show-content');
 } else {
 	$(".chat-block").last().append(bubble_content).find('.chat-bubble').fadeIn('slow');
 	$(chat_window).scrollTop($(chat_window)[0].scrollHeight);
