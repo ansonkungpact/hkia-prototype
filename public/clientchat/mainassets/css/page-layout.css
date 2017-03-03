@@ -11822,7 +11822,7 @@ hr {
 
 .lead {
     margin-bottom: 20px;
-    font-size: 16px;
+    font-size: 1em;;
     font-weight: 300;
     line-height: 1.4
 }
@@ -15600,7 +15600,7 @@ a.list-group-item-danger.active, a.list-group-item-danger.active:focus, a.list-g
 
 .panel-title {
     margin-top: 0;
-    font-size: 16px
+    font-size: 1em;
 }
 
 .panel-footer {
@@ -17182,7 +17182,7 @@ button.close {
         display: none!important
     }
     .carousel.single-carousel button {
-        font-size: 16px
+        font-size: 1em;
     }
     .carousel.single-carousel .style1 {
         width: 100%
@@ -17290,7 +17290,7 @@ button.close {
 
 .btn {
     /*padding: 9px 20px;
-    font-size: 16px;
+    font-size: 1em;;
     line-height: 1;*/
     white-space: inherit;
     transition: all .3s ease-in-out;
@@ -17472,7 +17472,7 @@ button.close {
 
 @media (max-width:767px) {
     .btn {
-        font-size: 16px;
+        font-size: 1em;;
         /*width: 100%;*/
         min-width: 0;
         /*max-width: 248px*/
@@ -17812,7 +17812,7 @@ header .alert:hover {
 }
 
 .jumbotron p {
-    font-size: 16px;
+    font-size: 1em;;
     margin-bottom: 0
 }
 
@@ -17841,7 +17841,7 @@ header .alert:hover {
     -ms-user-select: none;
     user-select: none;
     padding: 9px 20px;
-    font-size: 16px;
+    font-size: 1em;;
     line-height: 1;
     white-space: inherit;
     transition: all .3s ease-in-out;
@@ -18049,8 +18049,8 @@ a.jumbotron button.disabled, fieldset[disabled] a.jumbotron button {
 }
 
 .heroimage {
-    height: 61%;
-    max-height: 500px;
+    height: 100%;
+    max-height: 400px;
     text-align: center
 }
 
@@ -18110,7 +18110,7 @@ footer .sitemap {
 }
 
 footer .sitemap .page-nav a {
-    font-size: 16px
+    font-size: 1em;
 }
 
 footer .sitemap .page-nav a:hover {
@@ -18145,7 +18145,7 @@ footer .social-nav a:hover {
 }
 
 footer .control-label {
-    font-size: 16px;
+    font-size: 1em;;
     font-weight: 700;
     color: rgb(69,100,140)
 }
@@ -18282,7 +18282,7 @@ footer div.fancy-select ul.options.overflowing, footer div.fancy-select ul.optio
 
 @media (max-width:768px) {
     .sitemap small {
-        font-size: 16px
+        font-size: 1em;
     }
     .sitemap .page-nav a {
         font-size: 14px
@@ -18911,7 +18911,7 @@ body, html {
 body {
     color: #575757;
     margin-top: 125px;
-    font-size: 16px;
+    font-size: 1em;;
     line-height: 1.5
 }
 
@@ -24018,7 +24018,7 @@ a[aria-expanded=true].hvr-icon-rotate:before {
     }
     .dropdown-toggle+.dropdown-menu .drop-down-menu-tab>.tab-pane {
         padding: 0 42px;
-        font-size: 16px;
+        font-size: 1em;;
         line-height: 1.5
     }
     .dropdown-toggle+.dropdown-menu .drop-down-menu-tab>.tab-pane>.row {
@@ -24053,7 +24053,7 @@ a[aria-expanded=true].hvr-icon-rotate:before {
     }
     .dropdown-toggle+.dropdown-menu .dropdown-menu-nav {
         background-color: rgb(69,100,140);
-        font-size: 16px;
+        font-size: 1em;;
         font-weight: 900;
         border: none
     }
@@ -24199,7 +24199,7 @@ a[aria-expanded=true].hvr-icon-rotate:before {
         font-size: 12px
     }
     .breadcrumb>.active {
-        font-size: 16px
+        font-size: 1em;
     }
     .navbar-brand img {
         height: auto
@@ -24438,7 +24438,7 @@ a[aria-expanded=true].hvr-icon-rotate:before {
     }
     body {
         margin-top: 50px;
-        font-size: 16px
+        font-size: 1em;
     }
 }
 
