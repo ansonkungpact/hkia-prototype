@@ -1500,6 +1500,7 @@ PANELS CONFIGURATIONS
 
 .useful-info {
     background-color: #061d29;
+    background: url(../img/useful-info.jpg) no-repeat center top;
     text-align: center;
     background-position: center center;
     cursor: pointer;
