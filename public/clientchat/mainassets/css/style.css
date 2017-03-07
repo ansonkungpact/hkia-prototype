@@ -2499,3 +2499,6 @@ label {
     font-size: 1em;
     font-weight: normal;
 } 
+.chat-bubble {
+    font-size: 14px;
+}
