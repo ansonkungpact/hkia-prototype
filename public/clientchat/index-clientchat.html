@@ -245,6 +245,7 @@
         .search_form_wrapper {
             background: #fff;
             font-size: 1.2em;
+            outline: 1px solid transparent;
         }
 
         @media (min-width: 768px){
@@ -291,7 +292,7 @@
 
     <section class="heroimage home">
 
-        <h1 style="display:block">index</h1>
+        <h1 style="display:none">index</h1>
 
         <div class="carousel single-carousel enable-hover-event">
             <div class="home-carousel-item carousel-item" style="opacity: 100;">
@@ -417,7 +418,7 @@
                 <div class="clearfix tab-pane active" id="sArrivals">
                     <form class="frmArrivals frmArrival1" action="/en/flight/arrivals.html">
                         <div id="search_flight_num">
-                            <input type="text" placeholder="Flight Number" ="" style="border: 1px solid #ccc; padding: 4px;">
+                            <input type="text" placeholder="Flight Number" ="" style="border: 1px solid #ccc; padding: 4px; border-radius: 6px; height: 34px;">
                         </div>
                         <select class="form-control" id="origin">
                             <option>Origin</option>
@@ -616,7 +617,7 @@
                                 <div class="task-panel tasks-widget">
                                     <div class="panel-heading">
                                         <div class="pull-left">
-                                            <h5><i class="fa fa-calendar"></i> Calendar</h5></div>
+                                            <h2><i class="fa fa-calendar"></i> Calendar</h2></div>
                                         <br>
                                     </div>
 
