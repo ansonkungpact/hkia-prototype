@@ -298,7 +298,8 @@ function makeChatBubble (chat_message, chat_message_timestamp, chat_window, user
 	 	var locationArray;
 	 	var content = '';
 	 	var showDoc = false;
-	 	var showParis = false;
+	 	var showParisTime = false;
+	 	var showParisDate = false;
 	 	var showHealth = false;
 	 	var showMoney = false;
 
@@ -350,9 +351,12 @@ function makeChatBubble (chat_message, chat_message_timestamp, chat_window, user
 			}else if(entry == 'showDoc'){
 				console.log('comes here.............mikita:::: '+chat_message[entry]);
 				showDoc = true;
-			}else if(entry == 'showParis'){
+			}else if(entry == 'showParisDate'){
 				console.log('comes here.............mikita:::: '+chat_message[entry]);
-				showParis = true;
+				showParisDate = true;
+			}else if(entry == 'showParisTime'){
+				console.log('comes here.............mikita:::: '+chat_message[entry]);
+				showParisTime = true;
 			}else if(entry == 'showMoney'){
 				console.log('comes here.............mikita:::: '+chat_message[entry]);
 				showMoney = true;
@@ -363,16 +367,24 @@ function makeChatBubble (chat_message, chat_message_timestamp, chat_window, user
 		}
 		
 		if(showDoc){
-			$('.flight-paris').hide();
+			$('.flight-paris-time').hide();
+			$('.flight-paris-date').hide();
 			$('.money-exchange').hide();
 			$('.flight-cx278').fadeIn();
-		}else if(showParis){
+		}else if(showParisTime){
 			$('.flight-cx278').hide();
 			$('.money-exchange').hide();
-			$('.flight-paris').fadeIn();
+			$('.flight-paris-time').fadeIn();
+			$('.flight-paris-date').hide();
+		}else if(showParisDate){
+			$('.flight-cx278').hide();
+			$('.money-exchange').hide();
+			$('.flight-paris-time').hide();
+			$('.flight-paris-date').fadeIn();
 		}else if(showMoney){
 			$('.flight-cx278').hide();
-			$('.flight-paris').hide();
+			$('.flight-paris-time').hide();
+			$('.flight-paris-date').hide();
 			$('.money-exchange').fadeIn();
 		}else if(showHealth){
 			var bubble_content = "<img src='assets/img/health.jpg' />";
@@ -385,7 +397,7 @@ function makeChatBubble (chat_message, chat_message_timestamp, chat_window, user
 			$('.vera-message-audio')[0].play();
 		}
 	 }
-if(showDoc || showHealth || showParis) {
+if(showDoc || showHealth || showParisTime || showParisDate) {
 	// $('.dynamic-content').html(bubble_content).find('.chat-bubble').fadeIn('slow');
 
 	// $('.dynamic-content').addClass('show-content');

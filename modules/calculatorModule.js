@@ -250,13 +250,23 @@ var cCalculatorModule = function (){
 				if (intent == "status") {
 					isCalculationInProgress = true;
 					calculateInformation(question,classifierResponse);
-				} else if(intent == "Greeting"){
+				}else if(intent == "Greeting"){
 					callback("Hello");
 					callback("START_QUESTION");
 				}else if(intent == "flightparis"){
+				var entity = classifierResponse["entities"][0]["entity"];
+					if (entity == "around 6 : 00am") {
+					callback("FLIGHT_PARIS");
+					// callback("FLIGHT_PARIS_FOLLOW_UP");
+						console.log('6 : 00am now ok now');
+						showQuestion({"showParisTime":true});
+					}
+					if (entity == "7 march 2017") {
 					callback("FLIGHT_PARIS");
 					callback("FLIGHT_PARIS_FOLLOW_UP");
-					showQuestion({"showParis":true});
+						console.log('7 March 2017 now ok');
+						showQuestion({"showParisDate":true});
+					}
 				}else if(intent == "flightcode"){
 					callback("FLIGHT_CODE");
 					callback("FOLLOW_UP");
@@ -264,6 +274,7 @@ var cCalculatorModule = function (){
 				}else if(intent == "moneyexchange"){
 					callback("MONEY_EXCHANGE");
 					callback("FOLLOW_UP");
+					console.log('money');
 					showQuestion({"showMoney":true});
 				}
 				else {
