@@ -279,6 +279,9 @@
         .search_form_wrapper #myTab li.active a{
             background: #99d3c4;
         }
+        .search_form_wrapper #myTab li.active div{
+            outline 1px solid transparent;
+        }
 
         #search_flight_num{
             background: #99d3c4;
@@ -402,9 +405,11 @@
             <ul class="nav nav-tabs nav-justified" role="tablist" id="myTab">
                 <li class="active first">
                     <a onclick="click_tab(0);"><span class="icon icon-cag-arrival"></span> Arrivals</a>
+                    <div></div>
                 </li>
                 <li>
                     <a onclick="click_tab(1);"><span class="icon icon-cag-depart"></span> Departures</a>
+                    <div></div>
                 </li>
             </ul>
             <script>
@@ -457,6 +462,9 @@
         .mb:hover h2{
             text-decoration: underline;
         }
+        .pn {
+            text-shadow: 0 0 8px #000;
+        }
     </style>
 
 
@@ -482,7 +490,7 @@
                         <div class="col-md-4 col-xs-6 mb">
                             <div class="clinic pn">
                                 <i class="fa fa-search fa-5x"></i>
-                                <h2>Shopping, Dinning & Entertainment</h4>
+                                <h2>Shopping, Dining & Entertainment</h4>
                             </div>
                         </div>
                         <!-- /col-md-4 -->
@@ -611,14 +619,20 @@
                         </div>
                     </div>
                     <!-- CALENDAR-->
+                    <style>
+                    #calendar .panel-heading, #calendar .panel-heading h2 {
+                        font-size: 1.5em;
+                    }
+                    </style>
                     <div class="row mt">
                         <div class="col-md-12">
                             <div id="calendar">
                                 <div class="task-panel tasks-widget">
                                     <div class="panel-heading">
                                         <div class="pull-left">
-                                            <h2><i class="fa fa-calendar"></i> Calendar</h2></div>
-                                        <br>
+                                            <!-- <i class="fa fa-calendar"></i> -->
+                                            <h2> Calendar</h2>
+                                        </div>
                                     </div>
 
                                     <div class="panel-body">
