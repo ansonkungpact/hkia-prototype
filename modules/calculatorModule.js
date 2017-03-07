@@ -12,8 +12,8 @@ const QUESTIONS = {
 	"RESTART_QUESTION": [
 		"What can I help you with?"
 	],
-	"ASK_FOR_COVERAGE":[
-		"What type of coverage would you like to inquire about? (Hospitalization, Outpatient, or Dental)"
+	"ASK_FOR_STATUS":[
+		"Sure, which flight are you enquiring about?"
 	],
 	"ASK_FOR_OUTPATIENT_TYPE_SERVICE": [
 		"Can you provide 9 digit <strong>FWD Policy Number</strong>?"
@@ -32,6 +32,21 @@ const QUESTIONS = {
 	],
 	"ASK_FOR_FINAL_SERVICE": [
 		"What kind of services you want to know?<span class='help-text'>(Coverage, Benefit Used / Benefit Remaining , Claim Steps)</span>"
+	],
+	"FLIGHT_PARIS":[
+		"Here is the information on all Cathay Pacific flights from Paris today:"
+	],
+	"FLIGHT_PARIS_FOLLOW_UP":[
+		"Which flight you are enquiring about?"
+	],
+	"MONEY_EXCHANGE":[
+		"Sure, based on your current location, the closest Money Exchange service is in Terminal 1, Level 5, Arrivals Hall. Here is the map:"
+	],
+	"FLIGHT_CODE":[
+		"Sure, here is the detailed information on flight CX 278:"
+	],
+	"FOLLOW_UP":[
+		"Is there anything else I can help with?"
 	],
 	"DO_NOT_UNDERSTAND": [
 		"I'm sorry,  but I didn't understand your answer.",
@@ -232,12 +247,35 @@ var cCalculatorModule = function (){
 			getClassifier(question,function(classifierResponse){
 				var intent = classifierResponse["intent"];
 				console.log("intent:::"+intent);
-				if (intent == "medicalIntent") {
+				if (intent == "status") {
 					isCalculationInProgress = true;
 					calculateInformation(question,classifierResponse);
-				} else if(intent == "greetings"){
+				}else if(intent == "Greeting"){
 					callback("Hello");
 					callback("START_QUESTION");
+				}else if(intent == "flightparis"){
+				var entity = classifierResponse["entities"][0]["entity"];
+					if (entity == "around 6 : 00am") {
+					callback("FLIGHT_PARIS");
+					// callback("FLIGHT_PARIS_FOLLOW_UP");
+						console.log('6 : 00am now ok now');
+						showQuestion({"showParisTime":true});
+					}
+					if (entity == "7 march 2017") {
+					callback("FLIGHT_PARIS");
+					callback("FLIGHT_PARIS_FOLLOW_UP");
+						console.log('7 March 2017 now ok');
+						showQuestion({"showParisDate":true});
+					}
+				}else if(intent == "flightcode"){
+					callback("FLIGHT_CODE");
+					callback("FOLLOW_UP");
+					showQuestion({"showDoc":true});
+				}else if(intent == "moneyexchange"){
+					callback("MONEY_EXCHANGE");
+					callback("FOLLOW_UP");
+					console.log('money');
+					showQuestion({"showMoney":true});
 				}
 				else {
 					//seems some other intent
@@ -294,7 +332,7 @@ var cCalculatorModule = function (){
 			extractsFromQuestion.INTENT == null){
 			
 			extractsFromQuestion.INTENT = "MEDICAL_INTENT";
-			callback("HAPPY_TO_HELP");
+			// callback("HAPPY_TO_HELP");
 			extractionOfParameters(question,classifierResponse);
 		}else if(extractsFromQuestion.QTAG1 == null ||
 			extractsFromQuestion.QTAG2 == null ||
@@ -324,7 +362,6 @@ var cCalculatorModule = function (){
 
 				log('------------------');
 				log(extractsFromQuestion);
-
 				if(extractsFromQuestion.RESTART != null && extractsFromQuestion.RESTART == 'yes'){
 					clearProfile();
 					showQuestion("RESTART_QUESTION");
@@ -334,7 +371,7 @@ var cCalculatorModule = function (){
 					showQuestion("THANK_YOU");
 					extractsFromQuestion.RESTART = '';
 				}else if(extractsFromQuestion.QTAG1 == null){
-					showQuestion("ASK_FOR_COVERAGE");
+					showQuestion("ASK_FOR_STATUS");
 
 				}else if(extractsFromQuestion.QTAG2 == null){
 					showQuestion("ASK_FOR_TYPE_HEALTH_INSURANCE");
@@ -426,24 +463,32 @@ var cCalculatorModule = function (){
 		var sequence = require('sequence').Sequence.create();
 		sequence
 			.then(function(next) {
+						log('-------------1');
+						log('-------------1');
+						log(extractsFromQuestion.QTAG1);
 				console.log("currentQuestion");
 				console.log(currentQuestion);
 				if(extractsFromQuestion.QTAG1 == null){
 					console.log("Enters in QTAG1 check...");
+					console.log("2222");
 					var entities = classifierResponse["entities"];
 
 					for(var i=0;i<entities.length;i++){
+					console.log("3333");
 						var entity = entities[i]['type'];
 						console.log("entity:::"+entity);
 						if(entity == "medicalBenefit"){
 							if(entity == "medicalBenefit" && entities[i]['entity'] == "outpatient"){
 									extractsFromQuestion.QTAG1 = entities[i]['entity'];
+					console.log("444");
 									break;
 							}else if(entity == "medicalBenefit" && entities[i]['entity'] == "specialist"){
 									extractsFromQuestion.QTAG1 = "outpatient";
 									extractsFromQuestion.QTAG2 = entities[i]['entity'];
+					console.log("5555");
 									break;
 							}else{
+					console.log("6666");
 								callback("DO_NOT_UNDERSTAND");
 							}
 							break;
@@ -456,6 +501,8 @@ var cCalculatorModule = function (){
 			})
 			.then(function(next) {
 					console.log('comes here in QTAG2 check...');
+						log('-------------2');
+						log('-------------2');
 					if(currentQuestion == 'ASK_FOR_TYPE_HEALTH_INSURANCE'){
 						console.log('got current question correct');
 						var entities = classifierResponse["entities"];
@@ -480,7 +527,8 @@ var cCalculatorModule = function (){
 				}
 			)
 			.then(function(next) {
-					console.log('2222');
+						log('-------------3');
+						log('-------------3');
 					if(currentQuestion == 'SPECIALIST_SEARCH'){
 						if(question == "yes" || question == "sure" || question == "ofcourse"){
 							extractsFromQuestion.SPECIALIST_SEARCH = "yes";
