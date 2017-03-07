@@ -2486,7 +2486,16 @@ label {
 }
 
 @media (min-width: 768px) {
-.search_form_containner .search_form .search_form_wrapper li a{
-    margin-bottom: 0;
-}
+    .search_form_containner .search_form .search_form_wrapper li a{
+        margin-bottom: 0;
     }
+}  
+
+.main-content .tasks-widget .task-list  li .task-title .task-title-sp {
+    margin-right: 0;
+} 
+
+.main-content .tasks-widget .task-list  li .task-title .task-title-sp h3{
+    font-size: 1em;
+    font-weight: normal;
+} 
