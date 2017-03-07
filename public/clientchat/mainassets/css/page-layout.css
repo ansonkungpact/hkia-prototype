@@ -13794,14 +13794,12 @@ tbody.collapse.in {
 }
 
 .dropdown-menu>li>a:focus, .dropdown-menu>li>a:hover {
-    text-decoration: none;
     color: #7d7d7d;
     background-color: #f5f5f5
 }
 
 .dropdown-menu>.active>a, .dropdown-menu>.active>a:focus, .dropdown-menu>.active>a:hover {
     color: #fff;
-    text-decoration: none;
     outline: 0;
     background-color: rgb(69,100,140)
 }
@@ -13811,7 +13809,6 @@ tbody.collapse.in {
 }
 
 .dropdown-menu>.disabled>a:focus, .dropdown-menu>.disabled>a:hover {
-    text-decoration: none;
     background-color: transparent;
     background-image: none;
     filter: progid: DXImageTransform.Microsoft.gradient(enabled=false);
@@ -14188,7 +14185,6 @@ select[multiple].input-group-sm>.form-control, select[multiple].input-group-sm>.
 }
 
 .nav>li>a:focus, .nav>li>a:hover {
-    text-decoration: none;
     background-color: #e8e8e8
 }
 
@@ -14198,7 +14194,6 @@ select[multiple].input-group-sm>.form-control, select[multiple].input-group-sm>.
 
 .nav>li.disabled>a:focus, .nav>li.disabled>a:hover {
     color: #f1f1f1;
-    text-decoration: none;
     background-color: transparent;
     cursor: not-allowed
 }
@@ -14971,7 +14966,6 @@ select[multiple].input-group-sm>.form-control, select[multiple].input-group-sm>.
 }
 
 .pager li>a:focus, .pager li>a:hover {
-    text-decoration: none;
     background-color: #e8e8e8
 }
 
@@ -17304,11 +17298,7 @@ button.close {
 }
 
 .btn:disabled {
-    border-color: #c6c6c6!important
-}
-
-.btn, .btn>a {
-    text-decoration: none!important
+    border-color: #c6c6c6
 }
 
 .btn-primary {
@@ -17867,10 +17857,6 @@ header .alert:hover {
     text-decoration: none
 }
 
-.click-to-chat.default-banner .title>a:active, .click-to-chat.default-banner .title>a:focus, .click-to-chat.default-banner .title>a:hover, .hotline a:hover, .jumbotron button, .jumbotron button>a {
-    text-decoration: none!important
-}
-
 .jumbotron button.active, .jumbotron button:active {
     outline: 0;
     background-image: none;
@@ -18425,9 +18411,6 @@ footer div.fancy-select ul.options.overflowing, footer div.fancy-select ul.optio
     cursor: pointer
 }
 
-.click-to-chat h3 a:hover, .h3>a:active, .h3>a:focus, .h3>a:hover, h3>a:active, h3>a:focus, h3>a:hover {
-    text-decoration: none!important
-}
 
 .click-to-chat h3 {
     font-weight: 900;
@@ -18999,10 +18982,6 @@ p a {
 
 .content a, td a {
     color: rgb(69,100,140)
-}
-
-a.tel:hover {
-    text-decoration: none!important
 }
 
 ol>li {
