@@ -27,6 +27,10 @@ const INDEXB = path.join(__dirname, '/public/app/login.html');
 
 const server = express()
   .use(preAuth.connect(basic))
+  .use(express.static('public/app/'))
+  .get('/', function(req, res){
+     res.sendFile(INDEXB);
+  })
   .use(express.static('public'))
   .get('/chatbot', function(req, res){
      res.sendFile(INDEX);
